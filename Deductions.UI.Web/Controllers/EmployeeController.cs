@@ -8,8 +8,6 @@ namespace Deductions.UI.Web.Controllers
 {
     public class EmployeeController : Controller
     {
-      
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult CalculateEmployeeDeductions(EmployeeEditViewModel employeeViewModel)
@@ -21,7 +19,6 @@ namespace Deductions.UI.Web.Controllers
             }
 
             decimal cost = DeductionCalculator.CalculateDeductionCost(employee);
-
             decimal finalCost = DeductionCalculator.Compute(employee.GetSalary(), cost);
 
             return Json(new

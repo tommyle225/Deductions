@@ -5,10 +5,9 @@ namespace Deduction.Core
     public abstract class BaseEmployee : Person
     {
         protected decimal Salary { get => 2000.00M * 26; }
-                
+
         protected BaseEmployee(string firstName, string lastName) : base(firstName, lastName)
         {
-           
         }
 
         public abstract decimal GetSalary();
@@ -23,9 +22,7 @@ namespace Deduction.Core
             Dependents.Remove(dependent);
         }
 
-       
-
-        public List<IPerson> Dependents { get; set; } = new List<IPerson>();
+        public List<IPerson> Dependents { get; } = new List<IPerson>();
 
     }
 }
